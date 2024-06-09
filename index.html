@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>동영상 선택 및 재생</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <style>
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 2rem;
+        }
+
+        .video-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        video {
+            width: 80%;
+            max-width: 800px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="video-container">
+            <div class="video-buttons">
+                <button class="btn btn-primary" onclick="playVideo('video1.mp4')">동영상 1</button>
+                <button class="btn btn-primary" onclick="playVideo('video2.mp4')">동영상 2</button>
+                <button class="btn btn-primary" onclick="playVideo('video3.mp4')">동영상 3</button>
+                <button class="btn btn-primary" onclick="playVideo('video4.mp4')">동영상 4</button>
+                <button class="btn btn-primary" onclick="playVideo('video5.mp4')">동영상 5</button>
+            </div>
+            <video id="videoPlayer" controls>
+                <source src="video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        function playVideo(videoFile) {
+            var videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.src = videoFile;
+            videoPlayer.load();
+            videoPlayer.play();
+        }
+    </script>
+</body>
+
+</html>
